@@ -44,8 +44,22 @@ console.log("------Reporte Final Para imprimir-------------")
 console.log(reporteFinal);
 
 //for each: reemplaza el for... en los arrays... metodo mas moderno y sencillo de usar.
-//sintaxis: nombredelarray.foreach(function(elemento,indice){})
+//sintaxis: nombredelarray.foreach(function(elemento,indice){BLOQUE DE CODIGO.})
 
 inventarioTienda.forEach(function(producto,indice){
     console.log('Item: ' + indice + ": "+ producto);
 })
+
+//Simulacion de app de pedidos, donde la plataforma tiene cargados los pedidos y tengo que recorrer para verlos.
+
+const pedidosPendientes=["Pizza Napolitana","Hamburguesa con Cheddar","Coronas","Papas Fritas"];
+
+console.log("--------Sistema de Pedidos----------")
+
+pedidosPendientes.forEach(function(pedido,numero){
+    console.log('Pedido numero: ',numero + 1, " Preparando la orden que contiene: ",pedido);
+})
+
+//Aplicar funcion flecha.
+
+pedidosPendientes.forEach((pedido,numero) => console.log("Pedido numero: ",numero + 1,"Orden: ",pedido))
