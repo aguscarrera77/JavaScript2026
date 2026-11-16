@@ -33,7 +33,12 @@ function calcularIva(precioNeto){
 function calcularCostoTotal(precioProducto,esClienteVip,distanciaKm){
     let precioInicioProducto=precioProducto;//Arranca con el valor original recibido por el parametro.
     let costoEnvio=0;
+    let precioDescuento=0;
 
+    if(precioInicioProducto>30000){
+        precioDescuento=precioInicioProducto*0.80;
+        console.log("Se aplico un descuentos de : ",precioDescuento)
+    } else(precioDescuento=precioInicioProducto);
     //if clientevip= true el costo envio es 0.
     //if km= depende de la cantidad de km.
 
@@ -47,9 +52,14 @@ function calcularCostoTotal(precioProducto,esClienteVip,distanciaKm){
         console.log("Costo de envio: " + costoEnvio);
     };
         
-        
-
+    let totalApagar=precioDescuento + costoEnvio;
+    return totalApagar;
+ 
 
 
 
 }
+
+let compra=calcularCostoTotal(35000,false,10);
+
+console.log(compra)
