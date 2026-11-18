@@ -60,14 +60,48 @@ const inventario=[];
 
 inventario.push(new Productos(10,"SSD 1 TB",75000,4));
 inventario.push(new Productos(11,'Memoria Ram16gb',68000,8));
+inventario.push(new Productos(12,"Auriculares Airpods",2400,0));
 
-console.log(inventario[1]);
+
+console.log(inventario);
 
 //voy a filtrar dentro del array.Metodo filter().
 //filtramos stock mayores a 5.
-
+inventario.push(new Productos(20,'Monitor 20 pulgadas',24000,6));
 const productosDisponibles=inventario.filter(prod => prod.stock >5);
 
 console.log(productosDisponibles);
 
+//voy a recorrer el array inventario y mostrarlo con ForEach.
+
+console.log("-----------INVENTARIO PRODUCTOS------------------");
+
+inventario.forEach(productos=>{
+    console.log("Producto: ",productos.nombre,"-Stock: ",productos.stock," u.","-Precio final (+ Iva): ",productos.precioFinal());
+})
+
+//localstorage: pequena particion de almacenamiento. 
+//Comandos: setItem: guardar en string o texto plano.
+//Comandos: getItem: lee texto guardado.
+
+localStorage.setItem("ProductosInventario",JSON.stringify(inventario))
+
+//para que se devuelvan los elemenos guardados dentro del localstorage en texto plano y pasarles la funcion debe usar map().Rehidratar.
+//parse()transforma a objetos simples.
+
+const datosCrudos=JSON.parse(localStorage.getItem("ProductosInventario")) || [];
+
+const newInventario=datosCrudos.map(itemObjeto =>{
+    return new Productos(
+        itemObjeto.id,
+        itemObjeto.nombre,
+        itemObjeto.precioNeto,
+        itemObjeto.stock
+    );
+
+});
+
+newInventario.forEach(prod =>{
+    console.log("Objeto recuperado: ", prod.nombre,"--Precio final: ",prod.precioFinal());
+})
 
