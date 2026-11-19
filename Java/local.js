@@ -13,7 +13,7 @@ function Socio(nombre,actividad,cuotaAldia){
     }
     //Metodo interno de verifcacion de cuota.
     this.verificarCuota=function(){
-        return this.cuotaAldia ? "Si": "No";
+        return this.cuotaAldia ? "Si,tenes la cuota al dia": "No, debes pagar";
     }
 
 };
