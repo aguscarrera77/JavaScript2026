@@ -9,7 +9,7 @@ function Socio(nombre,actividad,cuotaAldia){
 
     //Agregar al perfil saludo personalizado.
     this.saludar=function(){
-        return "hola soy: ",this.nombre,"y entreno: ",this.actividad;
+        return` hola soy:  ${this.nombre} y entreno: ${this.actividad}`;
     }
     //Metodo interno de verifcacion de cuota.
     this.verificarCuota=function(){
@@ -29,9 +29,9 @@ plantillaSocios.push(new Socio('Melisa','Boxeo',true));
 
 //filtrar los socios que estan al dia.
 const sociosAlta=plantillaSocios.filter(socio=>
-{socio.cuotaAldia === true});
+socio.cuotaAldia === true);
 
-sociosAlta.forEach(socio=>{
-  console.log("Vamos ",socio.saludar());
+sociosAlta.forEach(soc=>{
+  console.log(soc.saludar());
 });
 
