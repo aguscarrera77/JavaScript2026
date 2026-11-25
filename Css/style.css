@@ -1,0 +1,35 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+}
+
+.panel{
+    border:2px solid black;
+    border-radius: 10px;
+    width: 450px;
+    background-color: #ffffff;
+    padding:18px;
+
+}
+
+
+.bagde{
+    background-color:#e2e8;
+    color: #f8fafc;
+    padding: 4px 10px;
+    font-size: 16px;
+    margin-bottom: 12px;
+
+}
+
+.fila-botones{
+    display:flex;
+    gap:10px;
+
+}
+.bagde-alerta{
+    background-color: #fee2e2;
+    color:#991b1b;
+}
