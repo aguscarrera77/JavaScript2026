@@ -1,0 +1,15 @@
+.texto{
+    color:blue;/*color es el color del texto*/
+    font-size: 18px;/*fontt-size el tamano del texto*/
+}
+
+.titulo{
+    text-decoration: underline;/*text-decoration es ponerle una decoracion a la etiqueta.*/
+}
+
+.texto-destacado{
+    color:#ffffff;
+    background-color: black;
+    padding:20px 18px;
+    border-radius: 8px;
+}
